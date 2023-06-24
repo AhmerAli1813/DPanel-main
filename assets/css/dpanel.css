@@ -194,7 +194,7 @@ section {
     font-family: var(--font-secondary);
     font-size: 16px;
     font-weight: 600;
-    color: #7f7f90;
+    color:var(--text-color);
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
@@ -346,7 +346,7 @@ section {
     border-bottom: 2px solid rgba(255, 255, 255, 0.8);
     font-size: 16px;
     font-weight: 600;
-    color: #7f7f90;
+    color:var(--text-color);
     white-space: nowrap;
     transition: 0.3s;
   }
