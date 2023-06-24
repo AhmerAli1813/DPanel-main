@@ -2,7 +2,7 @@
 /* CSS Variables */ 
 
 :root{
-    --sidebar-width:20%;
+    --sidebar-width:300px;
     --navbar-hieght : 90px;    
     /* font family variables. */ 
     --roboto: 'Roboto', cursive;
