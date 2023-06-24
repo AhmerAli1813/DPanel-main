@@ -266,46 +266,6 @@ th,td ,button,.btn {color: var(--text-color); text-transform: capitalize;}
 }
 /* headings css start */
 
-.dpanel-headings{
-    /* background-color: rebeccapurple; */
-    display: flex; 
-    flex-direction: column;
-}
-.dpanel-title {
-    position: relative;
-    font-size: var(--h1-font-size);
-    text-transform: capitalize;
-    /* padding: 1rem 2rem; */
-    /* margin-bottom:    var(--mb-1); */
-}
-    .dpanel-subtitle {
-        position: relative;
-         font-size: var(--h3-font-size); 
-        margin-left: var(--mb-1);
-        text-transform: capitalize;
-        }
-        .dpanel-title::before{
-            position: absolute;
-            content: "";
-            width: 50px;
-            height: 2px;
-            bottom: 0;
-            left: -20%;
-            background-color: var(--first-color);
-            animation: line-moving 3s ease infinite;
-        }
-        @keyframes line-moving {
-            0%{
-                transform: translateX(0%);
-            }
-            90%{
-                transform: translateX(100%);
-            }
-            95%{transform: translateX(90%);}
-            100%{
-                opacity: 0;
-            }
-        }
 /*table  css start */
 .table ,.table-striped>tbody>tr:nth-of-type(odd) {
     color: var(--text-color) !important;
