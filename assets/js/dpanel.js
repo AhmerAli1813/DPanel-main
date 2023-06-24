@@ -9,11 +9,14 @@ $(function () {
     }
     window.addEventListener('load', togglescrollTop);
     document.addEventListener('scroll', togglescrollTop);
-    scrollTop.addEventListener('click', window.scrollTo({
+    
+  }
+  scrollTop.addEventListener('click',()=>{
+    window.scrollTo({
       top: 0,
       behavior: 'smooth'
-    }));
-  }
+    })
+  });
 
 //  menu toggle function
     $("#menu-toggle").click(function (e) { 
