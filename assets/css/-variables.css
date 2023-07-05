@@ -1,9 +1,10 @@
 
 /* CSS Variables */ 
-
+/* $table-bg:  var(--#{$prefix}body-color); */
 :root{
     --sidebar-width:300px;
     --navbar-hieght : 90px;    
+    --bs-body-color: var(--text-color) !important;
     /* font family variables. */ 
     --roboto: 'Roboto', cursive;
     --header-height: 3rem;
@@ -11,9 +12,10 @@
     /*========== Colors ==========*/
     /* Change favorite color */
     --hue-color: 120; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
-        --color-pre : 69% , 61%;
+    --color-pre : 69% , 61%;
     /* HSL color mode */
 
+    --first-color-dark: hsl(var(--hue-color), 70%, 53%);
     --first-color: hsl(var(--hue-color), 69%, 61%);
     --first-color-alt: hsl(var(--hue-color), 57%, 53%);
     --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
@@ -26,7 +28,7 @@
     --container-color: #fff;
     --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
-
+    --bs-table-bg : var(--body-color) !important ;
     --primary-color: #4458dc;
     --primary-color2: #854fee;
     

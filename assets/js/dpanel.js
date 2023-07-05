@@ -79,10 +79,10 @@ $(".dropdown-menu").css("display" ,"none")
     let lst = window.localStorage;
     e.preventDefault();
     var hsl = $(this).data("hsl");
-  var color =  $(this).data("color");
-  var color_alt =  $(this).data("color-alt");
-  var color_lighter =  $(this).data("color-lighter");
-  console.log(`lighter : ${color_lighter} , alt ${color_alt} ,color : ${color}` )
+  // var color =  $(this).data("color");
+  // var color_alt =  $(this).data("color-alt");
+  // var color_lighter =  $(this).data("color-lighter");
+  // console.log(`lighter : ${color_lighter} , alt ${color_alt} ,color : ${color}` )
   var color_sts =  $(this).data("color-sts");
             lst.setItem("hsl" , hsl);
             lst.setItem("theme" , color_sts );
@@ -95,7 +95,7 @@ let lst = window.localStorage;
     let theme = lst.getItem("theme");
     $(":root").css("--hue-color" , hsl );
     if(theme== "dark"){
-      $(":root").css("--body-color" , `var(--bs-dark)`)   
+      $(":root").css("--body-color" , `var(--bs-gray-800)`)   
       $(":root").css("--body-color-light" , `var(--bs-gray-dark)`)   
       $(":root").css("--text-color" , `white`)   
       
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectHeader = document.querySelector('.Main-Container');
     if (selectHeader) {
       document.addEventListener('scroll', () => {
-        window.scrollY > 100 ? selectHeader.classList.add('scroll-active') : selectHeader.classList.remove('scroll-active');
+        window.scrollY > 0 ? selectHeader.classList.add('scroll-active') : selectHeader.classList.remove('scroll-active');
       });
     }
   

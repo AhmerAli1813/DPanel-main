@@ -1,8 +1,9 @@
+/* table,table.table , .card{background-color: transparent !important; color: var(--text-color) !important;} */
 .Main-Container.scroll-active header.dpanel-header{
 position: fixed;
 right: 0;
 box-shadow: none;
-transition: 0.0001s;
+/* transition: 0.0001s; */
 
 }
 .Main-Container.scroll-active aside.dpanel-sidebar{position: fixed; }
@@ -52,19 +53,7 @@ header.dpanel-header .nav-link{color: var(--text-color);}
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-body {
-  font-family: var(--font-default) !important;
-  color: var(--color-default);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-secondary);
-}
+  
 
 /*--------------------------------------------------------------
 # Sections & Section Header
@@ -182,7 +171,7 @@ section {
 
   .navbar>ul>li {
     white-space: nowrap;
-    padding: 10px 0 10px 28px;
+    padding: 10px 0 10px 10px;
   }
 
   .navbar a,
@@ -385,7 +374,7 @@ section {
   }
 
   .mobile-nav-show {
-    color: var(--color-secondary);
+    color: var(--text-color);
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -395,7 +384,7 @@ section {
   }
 
   .mobile-nav-hide {
-    color: var(--color-secondary);
+    color: var(--text-color);
     font-size: 32px;
     cursor: pointer;
     line-height: 0;
@@ -423,7 +412,7 @@ section {
   }
 }
 
-
+.left-navbar .nav-link {padding: 0.2rem ; margin: 0;}
 
 /* sidebar css start */
 aside .navbar-brand{
@@ -452,7 +441,9 @@ aside.dpanel-sidebar ul.nav{
     top: 0;
     left: 0;
 
-}
+
+  }
+  aside.dpanel-sidebar ul.nav li.sidebar-item:nth-child(2) {margin-top: 1rem;}
 aside.dpanel-sidebar ul.nav li.sidebar-item {
 position: relative;
 width: 100%;
@@ -485,7 +476,7 @@ li.sidebar-item a .icon , li.sidebar-item a .title{
  
 }
 li.sidebar-item a .icon{
-    font-size: 1.75rem;
+    font-size: 1rem;
     color: var(--text-color);
 }
 
@@ -505,7 +496,7 @@ aside.dpanel-sidebar.active li.sidebar-item a .title{display: none;}
         padding: 0 10px;
     }
     /* curve Outside */
-    li.sidebar-item.active a::before{
+    li.sidebar-item.active a::before {
         content: '';
         position: absolute;
         top:-50px;
@@ -516,6 +507,7 @@ aside.dpanel-sidebar.active li.sidebar-item a .title{display: none;}
         background-color: transparent;
         box-shadow: 35px 35px 0 10px var(--body-color);
         pointer-events: none;
+        z-index: 0;
     }
     li.sidebar-item.active  a::after{
         content: '';
@@ -527,10 +519,12 @@ aside.dpanel-sidebar.active li.sidebar-item a .title{display: none;}
         border-radius: 50%;
         background-color: transparent;
         pointer-events: none;
+        z-index: 0;
         box-shadow: 35px -35px 0 10px var(--body-color);
     }
-
-/*  main content css */
+    aside.dpanel-sidebar.active li.sidebar-item.active  a::after{display: none;}
+    aside.dpanel-sidebar.active li.sidebar-item.active  a::before{display: none;}
+    /*  main content css */
 
 main.dpanel-content{
     width: calc(100% - var(--sidebar-width)) ;
@@ -573,6 +567,7 @@ main.dpanel-content{
        font-size: var(--h3-font-size); 
       margin-left: var(--mb-1);
       text-transform: capitalize;
+      color: var(--text-color);
       }
       .dpanel-title::before{
           position: absolute;
@@ -596,6 +591,7 @@ main.dpanel-content{
               opacity: 0;
           }
       }
+      .dpanel-body{z-index: 10;}
 /* cards css */
 .card{
     border-left: 8px solid var(--clr);

@@ -1,18 +1,47 @@
 body{
     background-color: var(--body-color);
     color: var(--text-color);
+  font-family: var(--font-default) !important;
+
 }
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-secondary);
+  color: var(--text-color);
+}
+
 .txt-clr{
-    color: var(--text-color);
+    color: var(--text-color) !important;
 }
 /* form css */
-.form-control:focus ,.form-select:focus {
+.form-control:focus ,.form-select:focus ,.btn:focus {
     border-color: var(--first-color);
     box-shadow: var(--first-color-light) 0px 0px 0px 0.25rem;
 }
 select option:hover,select:focus > option:checked ,option:selected {
     cursor: pointer;
     background-color: var(--first-color-light) !important;
+}
+form label , form span {color:var(--text-color) !important;}
+/*--------------------------------------------------------------
+#tabels 
+--------------------------------------------------------------*/
+table , table.table{color: var(--text-color);}
+/*table  css start */
+.table ,.table-striped>tbody>tr:nth-of-type(odd) {
+  color: var(--text-color) !important;
+}
+.table-form{
+  width: 70%;
+  margin: auto;
+border: 1px solid var(--first-color);
+padding: 1em 2em;
 }
 /*--------------------------------------------------------------
 # Breadcrumbs
@@ -97,7 +126,7 @@ select option:hover,select:focus > option:checked ,option:selected {
   }
   
   .scroll-top:hover {
-    background: #ec2727;
+    background: var(--first-color-dark);
     color: #fff;
   }
   
@@ -231,7 +260,9 @@ th,td ,button,.btn {color: var(--text-color); text-transform: capitalize;}
 .dpanel-btn-alt{
     background-color: var( --first-color-lighter);
 }
-
+.dpanel-btn:hover{
+  background-color: var(--first-color-dark);
+}
 /* pagination css start  */
 .pagination  li:first-child{
     margin-left: auto;
@@ -240,7 +271,7 @@ th,td ,button,.btn {color: var(--text-color); text-transform: capitalize;}
         color: var(--first-color) ;
 }    
 .page-item.active .page-link {
-        background-color: var(--first-color) ;border: var(--first-color);
+        background-color: var(--first-color) ;border: var(--first-color); color: white;
     }    
     /* dropdown css start */
 .dropdown{
@@ -257,7 +288,6 @@ th,td ,button,.btn {color: var(--text-color); text-transform: capitalize;}
 }
 .dropdown-menu.active{
     /* opacity: 1; */
-    
     display: block;
 }
 .dropdown-item.disabled{
@@ -266,16 +296,7 @@ th,td ,button,.btn {color: var(--text-color); text-transform: capitalize;}
 }
 /* headings css start */
 
-/*table  css start */
-.table ,.table-striped>tbody>tr:nth-of-type(odd) {
-    color: var(--text-color) !important;
-}
-.table-form{
-    width: 70%;
-    margin: auto;
- border: 1px solid var(--first-color);
- padding: 1em 2em;
-}
+
 /* chart  css start */
 
  .circle-chart__circle {
@@ -334,7 +355,7 @@ th,td ,button,.btn {color: var(--text-color); text-transform: capitalize;}
   /* small card css start  */
   .small-box{
     height: 10rem;
-    background-color: red;
+    /* background-color: red; */
     position: relative;
   }
   .card-container i {
