@@ -18,10 +18,10 @@ $(function () {
     })
   });
 
-//  menu toggle function
+//  menu toggle function for sidebar
     $("#menu-toggle").click(function (e) { 
         var val =    getComputedStyle(document.documentElement).getPropertyValue('--sidebar-width'); // #999999
-        var sidebar = $(".dpanel-sidebar");
+        
        
         if(val == "300px"){
             
@@ -39,8 +39,7 @@ $(function () {
                 $(".navbar-brand").css("padding", "0.5rem 1.5rem")
 
             }
-        
-
+      
     });
     // navbar 
     $("#nav-menu-toggle").click(function (e) { 
@@ -73,16 +72,13 @@ $(".dropdown-menu").css("display" ,"none")
         
         
     });
+
   // themes
 
   $("#color-gallery .color-item").click(function (e) { 
     let lst = window.localStorage;
     e.preventDefault();
     var hsl = $(this).data("hsl");
-  // var color =  $(this).data("color");
-  // var color_alt =  $(this).data("color-alt");
-  // var color_lighter =  $(this).data("color-lighter");
-  // console.log(`lighter : ${color_lighter} , alt ${color_alt} ,color : ${color}` )
   var color_sts =  $(this).data("color-sts");
             lst.setItem("hsl" , hsl);
             lst.setItem("theme" , color_sts );
@@ -106,17 +102,8 @@ let lst = window.localStorage;
       $(":root").css("--text-color" , `var(--bs-dark)`)  
   }
 }
-theme();                // active class moving
-// $('.sidebar-item').click(function(e) {
-
-//     $('.sidebar-item').removeClass('active');
-
-//     var $this = $(this);
-//     if (!$this.hasClass('active')) {
-//         $this.addClass('active');
-//     }
-
-// });
+theme();
+// sidebar list hover  js 
 let list = document.querySelectorAll(".sidebar-item");
 function activeLink(){
     list.forEach((item) => {
@@ -146,12 +133,24 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
      * Sticky header on scroll
      */
-    const selectHeader = document.querySelector('.Main-Container');
+    const selectHeader = document.querySelector('.Main-Container') ,
+          sidebar = document.querySelector('aside');
     if (selectHeader) {
       document.addEventListener('scroll', () => {
         window.scrollY > 0 ? selectHeader.classList.add('scroll-active') : selectHeader.classList.remove('scroll-active');
+        if(window.scrollY >0){
+          sidebar.classList.remove("active");
+          $("#menu-toggle i").addClass("fa-arrow-left");
+          $("#menu-toggle i").removeClass("fa-arrow-right");
+          
+        }else{
+          $("#menu-toggle i").addClass("fas fa-arrow-right")
+          $("#menu-toggle i").removeClass("fa-arrow-left");
+        }
+  
       });
     }
+   
   
     /**
      * Navbar links active state on scroll

@@ -4,8 +4,8 @@ body{
   font-family: var(--font-default) !important;
 
 }
-
-
+.bg-body{background-color: var(--body-color) !important; border-color: var(--body-color);}
+hr{height: 2px;}
 h1,
 h2,
 h3,
@@ -50,6 +50,7 @@ padding: 1em 2em;
     padding: 15px 0;
     background: rgba(55, 55, 63, 0.05);
     margin-top: 90px;
+    cursor: pointer ;
   }
   
   @media (max-width: 575px) {
@@ -70,19 +71,31 @@ padding: 1em 2em;
     list-style: none;
     padding: 0;
     margin: 0;
+    cursor: pointer;
     font-size: 14px;
   }
   
   .breadcrumbs ol li+li {
     padding-left: 10px;
   }
-  
+  .breadcrumb-item+.breadcrumb-item::before {color: var(--text-color);}
   .breadcrumbs ol li+li::before {
     display: inline-block;
     padding-right: 10px;
-    color: #676775;
+    color: var(--text-color) !important;
     content: "/";
   }
+  
+.breadcrumb-item a{
+  color: var(--text-color);
+}
+.breadcrumb-item.active a  {
+  text-decoration: none;  
+  pointer-events: none;
+      color: var(--first-color);
+}
+.breadcrumb-item.active::before{color: var(--first-color);}
+  
   
   @media (max-width: 992px) {
     .breadcrumbs .d-flex {
@@ -230,12 +243,6 @@ padding: 1em 2em;
     
     
 }
-.breadcrumb-item a{
-    color: var(--text-color);
-}
-.breadcrumb-item.active  {
-        color: var(--first-color);
-}
 .d-flex-center{
 display: flex;
 justify-content: center;
@@ -276,7 +283,6 @@ th,td ,button,.btn {color: var(--text-color); text-transform: capitalize;}
     /* dropdown css start */
 .dropdown{
     position: relative;
-    /* color: var(--text-color-alt); */
 }
 .dropdown-menu{
     position: absolute;
@@ -284,7 +290,7 @@ th,td ,button,.btn {color: var(--text-color); text-transform: capitalize;}
     left: 0;
 }
 .dropdown-menu a {
-    color: var(--text-color-alt) !important;
+    color: var(--text-color) !important;
 }
 .dropdown-menu.active{
     /* opacity: 1; */
@@ -352,7 +358,15 @@ th,td ,button,.btn {color: var(--text-color); text-transform: capitalize;}
   }
 
 
-  /* small card css start  */
+  /*  card css start  */
+  /* cards css */
+.card{
+  background-color:var(--body-color) ;
+    border-left: 8px solid var(--clr);
+}
+.card .card-heading{
+    color : var(--clr);
+}
   .small-box{
     height: 10rem;
     /* background-color: red; */
